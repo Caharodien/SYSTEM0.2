@@ -1,8 +1,6 @@
-##### Developer 1/alburo == Develoiper 2/sancija
-
 ## User Management API Documentation
 
-# Table of Contents
+# Table of Contents //////////////
 
 Database Setup
 API Endpoints
@@ -12,17 +10,17 @@ Admin Features
 Error Handling
 Deployment Guidelines
 
-# Prerequisites
+# Prerequisites //////////////
 
 Node.js
 MySQL 9.2 or higher
 npm
 
-# installation
+# installation //////////////
 
 npm install
 
-# On config.json
+# On config.json //////////////
 
 {
     "database": {
@@ -44,11 +42,11 @@ npm install
         }
     }
 
-# Start the server:
+# Start the server://////////////
 
 npm run start:dev
 
-# Used mqsql shell 
+# Used mqsql shell  //////////////
 
 \connect root@localhost
 
@@ -59,7 +57,7 @@ CREATE DATABASE `node-mysql-signup-verification-api`;
 
 ## Authentication Endpoints
 
-# First user to register will be the Admin
+# First user to register will be the Admin //////////////
 
 Endpoint: POST /accounts/register
 Description: Register a new user account
@@ -76,7 +74,7 @@ Request Body:
 }
 
 
-#  Verify Email
+#  Verify Email //////////////
 
 Endpoint: POST /accounts/verify-email
 Description: Verify a user's email address
@@ -86,7 +84,7 @@ Request Body:
 }
 
 
-# Authenticate
+# Authenticate //////////////
 
 Endpoint: POST /accounts/authenticate
 Description: Authenticate a user and get JWT token
@@ -96,7 +94,7 @@ Request Body:
   "password": "Password123!"
 }
 
-# Response 
+# Response  //////////////
 
 {
   "id": 5,
@@ -113,7 +111,7 @@ Request Body:
 }
 
 
-# Refresh Token
+# Refresh Token //////////////
 
 Endpoint: POST /accounts/refresh-token
 Description: Get a new JWT token using a refresh token
@@ -121,7 +119,7 @@ Request Cookies: Include the refreshToken cookie
 Response: New JWT token and refresh token
 
 
-# Revoke Token
+# Revoke Token //////////////
 
 Endpoint: POST /accounts/revoke-token
 Description: Revoke a refresh token
@@ -131,21 +129,21 @@ Request Body:
 }
 
 
-# Get All Accounts (Admin only)
+# Get All Accounts (Admin only) //////////////
 
 Endpoint: GET /accounts
 Description: Get all user accounts
 Auth Required: Yes (Admin)
 Response: Array of user accounts
 
-# Get Account by ID
+# Get Account by ID //////////////
 
 Endpoint: GET /accounts/{id}
 Description: Get a specific user account
 Auth Required: Yes (Admin or account owner)
 Response: User account details
 
-# Create Account (Admin only)
+# Create Account (Admin only) //////////////
 
 Endpoint: POST /accounts
 Description: Create a new user account
@@ -163,7 +161,7 @@ Request Body:
 
 Response: Created user account details
 
-# Update Account
+# Update Account //////////////
 
 Endpoint: PUT /accounts/{id}
 Description: Update a user account
@@ -176,15 +174,15 @@ Request Body:
 
 Response: Updated user account details
 
-# Delete Account
-
+# Delete Account //////////////
+ 
 Endpoint: DELETE /accounts/{id}
 Description: Delete a user account
 Auth Required: Yes (Admin or account owner)
 Response: A message indicating successful deletion
 
 
-## Forgot Password
+## Forgot Password //////////////
 
 Endpoint: POST /accounts/forgot-password
 Description: Request a password reset
@@ -194,8 +192,8 @@ Request Body:
 }
 Response: A message to check email for reset instructions
 
-## Validate Reset Token
-
+## Validate Reset Token //////////////
+ 
 Endpoint: POST /accounts/validate-reset-token
 Description: Validate a password reset token
 Request Body:
@@ -204,7 +202,7 @@ Request Body:
 }
 Response: A message indicating valid token
 
-## Reset Password
+## Reset Password //////////////
 
 Endpoint: POST /accounts/reset-password
 Description: Reset a user's password
